@@ -12,14 +12,35 @@ const Dashboard = function () {
                 // console.log(data);
                 setBooks(data)
             })
-    }, [])
+    }, []);
+
+    useEffect(function(){
+        const deleteBtn = document.querySelectorAll(".btn-delete")
+        deleteBtn.forEach(function(btn){
+            btn.addEventListener("click", function(){
+                const result = confirm("Bạn có chắc muốn xóa hay không?")
+                if(result){
+                    const id = btn.dataset.id
+                    handlDeleteBook(id)
+                }
+            })
+        })
+    })
+    const handlDeleteBook = (id)=>{
+        fetch("http://localhost:3000/books/"+id, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+    }
 
     return /*html*/`
-        <h1 class="text-xl">Admin</h1>
+        <h1 class="text-2xl font-bold text-center bg-slate-500 text-white border border-separate">Admin</h1>
 
-        <div class="pt-10">
+        <div class="pt-10 border ">
             <table class="w-full bg-white text-sm">
-            <thead class="ltr:text-left rtl:text-right">
+            <thead class="ltr:text-left rtl:text-right border-black border">
                 <tr>
                     <th class="w-[5%] px-4 py-2 font-medium text-gray-900">STT</th>
                     <th class="w-[25%] px-4 py-2 font-medium text-gray-900">Name</th>
@@ -30,23 +51,36 @@ const Dashboard = function () {
                 </tr>
             </thead>
 
-            <tbody class="divide-y divide-gray-200">
+            <tbody class="divide-y divide-gray-200 border-black border">
                 ${books.map((book, index) => /*html*/`
-                    <tr>
-                        <td class="px-4 py-2 font-medium text-gray-900">${index + 1}</td>
-                        <td class="px-4 py-2 text-gray-700">${book.name}</td>
-                        <td class="px-4 py-2 text-gray-700">${book.short_description}</td>
-                        <td class="px-4 py-2 text-gray-700">${book.list_price}</td>
-                        <td class="px-4 py-2 text-gray-700">
+                    <tr class="border-black border">
+                        <td class="px-4 py-2 font-medium text-gray-900 border-black border">${index + 1}</td>
+                        <td class="px-4 py-2 text-gray-700 border-black border">${book.name}</td>
+                        <td class="px-4 py-2 text-gray-700 border-black border">${book.short_description}</td>
+                        <td class="px-4 py-2 text-gray-700 border-black border">${book.list_price}</td>
+                        <td class="px-4 py-2 text-gray-700 border-black border">
                             <img src="${book.images[0].base_url}"/>
                         </td>
-                        <td class="whitespace-nowrap px-4 py-2">
+                        <td class="whitespace-nowrap px-4 py-2 border-black border">
                             <a
                             href="/admin/book/${book.id}"
                             class="inline-block rounded bg-indigo-600 px-4 py-2 text-xs font-medium text-white hover:bg-indigo-700"
                             >
-                            View
+                            Sửa
                             </a>
+                            <button
+                            data-name="${book.name}"
+                            class="btn-delete inline-block rounded bg-red-600 px-4 py-2 text-xs font-medium text-white hover:bg-gray-700"
+                            >
+                            Xóa
+                            </button>
+                            <button 
+                            
+                            class="inline-block rounded bg-yellow-600 px-4 py-2 text-xs font-medium text-white hover:bg-gray-700"
+                            >
+                            Thêm
+                            </button>
+
                         </td>
                     </tr>
                 `).join("")}

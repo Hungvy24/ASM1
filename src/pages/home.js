@@ -24,14 +24,14 @@ const HomePage = function () {
           <div>
             <img src="../img/banner.jpg" alt="">
           </div>
-          <div class="pt-4 font-medium ">
+          <div class="pt-4 font-bold">
             <a href="#" class="mr-10 text-decoration-line-through hover:text-red-500 hover:font-bold">Phổ Biến</a>
             <a href="#" class="mr-10 hover:text-red-500 hover:font-bold">Bán Chạy</a>
             <a href="#" class="mr-10 hover:text-red-500 hover:font-bold">Hàng Mới</a>
             <a href="#" class="mr-10 hover:text-red-500 hover:font-bold">Giá Thấp</a>
             <a href="#" class="mr-10 hover:text-red-500 hover:font-bold">Giá Cao</a>
           </div>
-      <hr>
+      <hr class="pb-10">
       <div class="grid grid-cols-4 gap-10 ">
       ${data.books.map(function (book) {
         return Book(book)

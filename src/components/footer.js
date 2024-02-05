@@ -36,25 +36,26 @@ const FooterComponent = function () {
               <p>Bán hàng cùng Tiki</p>
               <h2>Chứng nhận bởi</h2>
               <div class="flex">
-                  <img src="../img/chungnhan2.jpg" alt="" class="w-10 ">
-                  <img src="../img/chungnhan1.jpg" alt="" class="w-28 ">
+                  <img src="../../public/img/chungnhan2.jpg" alt="" class="w-10 ">
+                  <img src="../../public/img/chungnhan1.jpg" alt="" class="w-28 ">
               </div>
           </div>
           <div>
               <h2 class="text-xl font-bold">Phương thức thanh toán</h2>
               <div class=" grid grid-cols-5 gap-2 pt-4">
-                  <img src="../img/pt1.jpg" alt="">
-                  <img src="../img/pt2.jpg" alt="">
-                  <img src="../img/pt3.jpg" alt="">
-                  <img src="../img/pt4.jpg" alt="">
-                  <img src="../img/pt5.jpg" alt="">
-                  <img src="../img/pt6.jpg" alt="">
-                  <img src="../img/pt7.jpg" alt="">
-                  <img src="../img/pt8.jpg" alt="">
-                  <img src="../img/pt9.jpg" alt="">
-                  <img src="../img/pt10.jpg" alt="">
-                  <img src="../img/pt11.jpg" alt="">
-                  <img src="../img/pt12.jpg" alt=""><br><br>
+                  <img src="../../public/img/pt1.jpg" alt="">
+                  <img src="../../public/img/pt2.jpg" alt="">
+                  <img src="../../public/img/pt3.jpg" alt="">
+                  <img src="../../public/img/pt4.jpg" alt="">
+                  <img src="../../public/img/pt5.jpg" alt="">
+                  <img src="../../public/img/pt6.jpg" alt="">
+                  <img src="../../public/img/pt7.jpg" alt="">
+                  <img src="../../public/img/pt8.jpg" alt="">
+                  <img src="../../public/img/pt9.jpg" alt="">
+                  <img src="../../public/img/pt10.jpg" alt="">
+                  <img src="../../public/img/pt11.jpg" alt="">
+                  <img src="../../public/img/pt12.jpg" alt="">
+                  <br><br>
               </div>
               <h2 class="mt-5 font-medium">Dịch vụ giao hàng</h2>
               <img src="../img/pt13.jpg" alt="">
@@ -62,16 +63,16 @@ const FooterComponent = function () {
           <div class="">
               <h2 class="text-xl font-bold">Mạng Xã Hội</h2>
               <div class="grid grid-cols-3 gap-2 pt-4">
-                  <img src="../img/page1.jpg" alt="" class="w-10">
-                  <img src="../img/page2.jpg" alt="" class="w-10">
-                  <img src="../img/page3.jpg" alt="" class="w-10">
+                  <img src="../../public/img/page1.jpg" alt="" class="w-10">
+                  <img src="../../public/img/page2.jpg" alt="" class="w-10">
+                  <img src="../../public/img/page3.jpg" alt="" class="w-10">
               </div>
               <h2 class="text-lg mt-5 font-bold">Tải ứng dụng trên điện thoại</h2>
               <div class="grid grid-cols-3 gap-1 pt-5 ">
-                  <img src="../img/ud1.jpg" alt="" class="w-20">
+                  <img src="../../public/img/ud1.jpg" alt="" class="w-20">
                   <div class="w-24">
-                      <img src="../img/ud2.jpg" alt="" class="w-48">
-                      <img src="../img/ud3.jpg" alt="" class="w-48 pt-4">
+                      <img src="../../public/img/ud2.jpg" alt="" class="w-48">
+                      <img src="../../public/img/ud3.jpg" alt="" class="w-48 pt-4">
                   </div>
               </div>
           </div>

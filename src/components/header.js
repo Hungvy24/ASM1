@@ -24,7 +24,7 @@ const HeaderComponent = function () {
             </svg>
             Giỏ hàng</a>
         </div>
-    </div>
+        </div>
 </header>
 <nav class="bg-gray-200 h-8">
 
