@@ -34,6 +34,9 @@ const updateBook = function(id){
             name: formData.get("name"),
             authors: formData.get("authors"),
             original_price: formData.get("price"),
+            current_seller: {
+                price: formData.get("current_seller.price")
+            }
             
         }
         fetch("http://localhost:3000/books/"+id, {
@@ -52,7 +55,7 @@ const updateBook = function(id){
     <section class="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6">
         <img
         alt="Night"
-        src="${book.images[0].base_url}"
+        src="${book.images?.[0].base_url}"
         class="absolute inset-0 h-full w-full object-cover opacity-80"
         />
     </section>
@@ -99,7 +102,7 @@ const updateBook = function(id){
             </div>
 
             <div class="col-span-6 sm:col-span-3">
-            <label for="Password" class="block text-sm font-medium text-gray-700"> Giá </label>
+            <label for="Password" class="block text-sm font-medium text-gray-700"> Giá Gốc</label>
 
             <input
                 type="number"
@@ -107,6 +110,17 @@ const updateBook = function(id){
                 name="price"
                 class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                 value="${book.original_price || ""}"
+            />
+            </div>
+            <div class="col-span-6 sm:col-span-3">
+            <label for="Password" class="block text-sm font-medium text-gray-700"> Giá sale</label>
+
+            <input
+                type="number"
+                id="Password"
+                name="current_seller.price"
+                class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                value="${book.current_seller?.price || ""}"
             />
             </div>
 

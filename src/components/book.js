@@ -3,7 +3,7 @@ const Book = function (book) {
     <a href="/book/${book.id}/" class="block">
         <img
             alt="Art"
-            src="${book.images[0].base_url}"
+            src="${book.images?.[0].base_url}"
             class="h-64 w-full object-cover sm:h-80 lg:h-96"
         />
         <h3 class="mt-2 text-lg font-medium text-gray-900">${book.name}</h3>
@@ -38,7 +38,7 @@ const Book = function (book) {
                                 </p>
         </div>
         <div class="flex">
-        <p class="mt-2 text-xl text-red-500 pr-3">${book.original_price} đ</p>
+        <p class="mt-2 text-xl text-red-500 pr-3">${book.current_seller?.price} đ</p>
         <div class="pt-3">
         <input class="text-sm bg-[#FFF0F1] rounded-sm border border-[#FF424E] h-5" type="reset" value="-23%">
         </div>

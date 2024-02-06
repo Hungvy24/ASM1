@@ -9,6 +9,7 @@ import Details from "./components/product_detail";
 import Dashboard from "./pages/dashboard";
 // import Delete from "./pages/delete";
 import updateBook from "./pages/update";
+import addBook from "./pages/add";
 
 
 
@@ -44,7 +45,11 @@ router.on('/admin', function () {
 // });
 router.on('/admin/book/:id', function({data}){
     render("#app",()=> updateBook(data.id))
+});
+router.on('/admin/book/addBook/:id', function({data}){
+    render("#app",()=> addBook(data.id))
 })
+
 
 router.resolve();
 

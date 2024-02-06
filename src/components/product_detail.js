@@ -8,7 +8,7 @@ const Details = function (id) {
       ${HeaderComponent()}
       <main class="flex ml-72 mx-auto max-w-screen-xl pt-10">
       <div>
-          <img src="${book.images[0].base_url}" alt="" class="w-[400px]">
+          <img src="${book.images?.[0].base_url}" alt="" class="w-[400px]">
 
       </div>
       <div class="pl-16">
