@@ -1,16 +1,48 @@
+import { useEffect, useState } from "../ultilities"
+import { isEmpty } from "lodash";
 const HeaderComponent = function () {
-  // `` backticks
+  const [book, setBooks] = useState({});
+  const [searchInput, setSearchInput] = useState("");
+  const [searchResult, setSearchResult] = useState([]);
+  const [showSearchResult, setShowSearchResult] = useState(true);
+  useEffect(()=>{
+    fetch("http://localhost:3000/books")
+    .then((res)=>res.json())
+    .then((data)=>setBooks(data))
+  },[setSearchInput])
+  
+  const handleClear = ()=>{
+    setSearchInput("")
+    setShowSearchResult([])
+    
+
+  }
+  const handleResult = ()=>{
+    setSearchResult(book.filter((book)=>book.name.toLowerCase().includes(searchInput.toLowerCase())))
+    setShowSearchResult(false)
+  }
+
+  if (isEmpty(book)) {
+    return /*html */`
+    <div class="flex justify-center items-center text-red-800 font-bold text-5xl py-80">
+    Loading. . .
+    </div>
+    `
+  }
+  
+  // `` backticks  
   return /*html */` 
     <header class="bg-[#1A94FF]">
     <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
         <a href="/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Logo_Tiki_2023.png/1200px-Logo_Tiki_2023.png" class="w-40 "></a>
         <div class="grow flex justify-center">
-            <input type="search" placeholder="Tìm sản phẩm, thương hiệu, ..." class="w-[70%] p-2">
-            <button type="button" class="bg-[#0D5CB6] p-2 text-white flex font-medium">
+            <input id="searchInput" type="text" placeholder="Tìm sản phẩm, thương hiệu, ..." class="w-[70%] p-2">
+            <button id="search-btn" type="button" class="bg-[#0D5CB6] p-2 text-white flex font-medium hover:bg-orange-600">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
             </svg>
-            Tìm kiếm</button>
+            Tìm kiếm
+            </button>
             </div>
             
             <div class="text-slate-50 text-sm flex">
@@ -24,7 +56,7 @@ const HeaderComponent = function () {
             </svg>
             Giỏ hàng</a>
         </div>
-        </div>
+      </div>
 </header>
 <nav class="bg-gray-200 h-8">
 

@@ -3,7 +3,7 @@ const Book = function (book) {
     <a href="/book/${book.id}/" class="block">
         <img
             alt="Art"
-            src="${book.images?.[0].base_url}"
+            src="${book.images?.[0]?.base_url}"
             class="h-64 w-full object-cover sm:h-80 lg:h-96"
         />
         <h3 class="mt-2 text-lg font-medium text-gray-900">${book.name}</h3>

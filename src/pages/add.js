@@ -20,6 +20,7 @@ const addBook = ()=>{
             event.preventDefault()
             const formData = new FormData(createForm)
             const name = formData.get('name')
+            const authors = formData.get('authors')
             const original_price = formData.get('original-price')
             const short_description = formData.get('short-description')
             const rating_average = formData.get('rating-average')
@@ -27,7 +28,7 @@ const addBook = ()=>{
                 price: formData.get('current-seller.price')
             }
             const newBook = {
-                name, original_price, short_description, rating_average, current_seller
+                name, original_price, short_description, rating_average, current_seller, authors
             }
             postBook(newBook)
         }

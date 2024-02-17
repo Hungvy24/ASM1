@@ -3,6 +3,7 @@ import FooterComponent from '../components/footer'
 
 import data from '../../db.json' assert {type: 'json'}
 import Book from '../components/book'
+import Banner from '../components/banner'
 
 const HomePage = function () {
   return /*html*/ `
@@ -22,7 +23,7 @@ const HomePage = function () {
           <div class="w-4/5 pl-5">
             <h1 class="font-bold text-2xl">Nhà Sách Tiki</h1><br>
           <div>
-            <img src="../img/banner.jpg" alt="">
+              ${Banner()}
           </div>
           <div class="pt-4 font-bold">
             <a href="#" class="mr-10 text-decoration-line-through hover:text-red-500 hover:font-bold">Phổ Biến</a>

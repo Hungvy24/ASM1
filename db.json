@@ -2478,27 +2478,15 @@
       "authors": "Hung vy123"
     },
     {
-      "id": "2538",
-      "name": "samsung",
-      "original_price": "555.000",
-      "short_description": "            \n          asdasda",
-      "rating_average": "4",
+      "id": "0992",
+      "name": "samsung123124",
+      "original_price": "12312",
+      "short_description": "            \n ádacxzdsfsdga         ",
+      "rating_average": "5",
       "current_seller": {
-        "price": "444.000"
-      }
-    },
-    {
-      "id": "7d69",
-      "name": "phuong",
-      "original_price": "12423",
-      "short_description": "            ádffsdasdf\n          ",
-      "rating_average": "43",
-      "current_seller": {
-        "price": "123123"
+        "price": "123"
       },
-      "images": {
-        "base_url": null
-      }
+      "authors": "Donald Keene - Japan "
     }
   ]
 }

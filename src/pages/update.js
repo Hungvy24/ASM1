@@ -10,14 +10,7 @@ const updateBook = function(id){
         .then((res)=>res.json())
         .then((data)=>setBooks(data))
     }, []);
-    useEffect(function(){
-        const updateBtn = document.querySelector("#update-btn")
-        updateBtn.onclick= function(e){
-            // console.log(updateBtn);
-            e.preventDefault()
-            handleUpdateBook()
-        }
-    })
+    
     if(isEmpty(book)){
         return /*html*/`
             <div class="flex justify-center items-center text-red-800 font-bold text-5xl py-80">
@@ -55,7 +48,7 @@ const updateBook = function(id){
     <section class="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6">
         <img
         alt="Night"
-        src="${book.images?.[0].base_url}"
+        src="${book.images?.[0]?.base_url}"
         class="absolute inset-0 h-full w-full object-cover opacity-80"
         />
     </section>
