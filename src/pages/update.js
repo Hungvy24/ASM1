@@ -2,7 +2,6 @@ import { useEffect, useState } from "../ultilities"
 import HeaderComponent from "../components/header"
 import FooterComponent from "../components/footer"
 import {isEmpty} from "lodash"
-// import {} from '../lodash'
 const updateBook = function(id){
     const [book, setBooks] = useState({})
     useEffect(function(){
@@ -18,7 +17,16 @@ const updateBook = function(id){
             </div>
         `
     }
-
+    useEffect(()=>{
+        const updateBook = document.querySelector("#update-btn")
+        // console.log(updateBook);
+        updateBook.onclick = function(e){
+            e.preventDefault()
+            handleUpdateBook()
+        }
+    })
+    
+    
     const handleUpdateBook = function(){
         const formData  = new FormData(document.querySelector("#update-form"))
         // console.log(formData.get("name"));
@@ -38,7 +46,9 @@ const updateBook = function(id){
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(data),
-        })
+        }).then(()=> 
+        alert("Cap nhap thanh cong"),
+        window.location.href = "/admin")
     }
 
     return /*html*/`

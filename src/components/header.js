@@ -1,34 +1,6 @@
 import { useEffect, useState } from "../ultilities"
 import { isEmpty } from "lodash";
 const HeaderComponent = function () {
-  const [book, setBooks] = useState({});
-  const [searchInput, setSearchInput] = useState("");
-  const [searchResult, setSearchResult] = useState([]);
-  const [showSearchResult, setShowSearchResult] = useState(true);
-  useEffect(()=>{
-    fetch("http://localhost:3000/books")
-    .then((res)=>res.json())
-    .then((data)=>setBooks(data))
-  },[setSearchInput])
-  
-  const handleClear = ()=>{
-    setSearchInput("")
-    setShowSearchResult([])
-    
-
-  }
-  const handleResult = ()=>{
-    setSearchResult(book.filter((book)=>book.name.toLowerCase().includes(searchInput.toLowerCase())))
-    setShowSearchResult(false)
-  }
-
-  if (isEmpty(book)) {
-    return /*html */`
-    <div class="flex justify-center items-center text-red-800 font-bold text-5xl py-80">
-    Loading. . .
-    </div>
-    `
-  }
   
   // `` backticks  
   return /*html */` 
